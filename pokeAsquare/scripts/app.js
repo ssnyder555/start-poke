@@ -13,7 +13,14 @@ const createSquares = (numberOfSquares) => {
 
 for (let i = 0; i <= numberOfSquares; i++) {
 // creating squares
-  const $div = $('<div/>');
+  const $div = $('<div/>').on('click', (e) => {
+    //e is short for event
+    // e.currentTarget gives you the divs
+    // you are clickng on
+    $(e.currentTarget).css('opacity', 0)
+
+
+  })
   // this is where the random color is applied
   applyRandomColor($div);
   // attach the square
